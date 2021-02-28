@@ -10,8 +10,7 @@
     <div id="content"></div>
     <script>
       function hndlr(response) {
-      for (var i = 0; i < response.items.length; i++) {
-        var item = response.items[i];
+      {"nome":"higor","nick":"Dark","sexo":"M - Masculino","numero":"5522996215481","yt":"https://bit.ly/2ZINr1x","insta":"sem no momento"}
         // in production code, item.htmlTitle should have the HTML entities escaped.
         document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
       }

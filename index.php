@@ -1,5 +1,4 @@
- <ul class="api">
- <li class="api-item"><a href="api" 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -18,7 +17,9 @@
       }
     }
     </script>
-    <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyCcDWfGexWwNfup3ux_LGxPkw1ZDQ8nnGw&cx=017576662512468239146:omuauf_lfve&q=cars&callback=hndlr">
+    <ul class="api">
+ <li class="api-item"><a href="api" 
+    <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyCcDWfGexWwNfup3ux_LGxPkw1ZDQ8nnGw&cx=017576662512468239146:omuauf_lfve&q=cars&callback=$api">
     </script>
   </body>
 </html>

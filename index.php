@@ -5,8 +5,7 @@
   <head>
     <title>Wiki teste api</title>
   </head>
- <ul class="api">
- <li class="api-item"><a href="#" class="menu-link">Home</a></li> 
+ <li class="api-item"><a href="api"
   <body>
     <div id="content"></div>
     <script>

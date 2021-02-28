@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
   <html>
+  <ul class="api"> 
   <head>
     <title>Wiki teste api</title>
   </head>
@@ -17,9 +17,7 @@
       }
     }
     </script>
-    <ul class="api">
- <li class="api-item"><a href="api" 
-    <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyCcDWfGexWwNfup3ux_LGxPkw1ZDQ8nnGw&cx=017576662512468239146:omuauf_lfve&q=cars&callback=$api">
+    <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyCcDWfGexWwNfup3ux_LGxPkw1ZDQ8nnGw&cx=017576662512468239146:omuauf_lfve&q=cars&callback=hndlr">
     </script>
   </body>
 </html>

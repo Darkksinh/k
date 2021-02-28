@@ -1,22 +1,34 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-  <html>
-  <ul class="api"> 
-  <head>
-    <title>Wiki teste api</title>
-  </head>
-  <body>
-    <div id="content"></div>
-    <script>
-      function hndlr(response) {
-      {"nome":"higor","nick":"Dark","sexo":"M - Masculino","numero":"5522996215481","yt":"https://bit.ly/2ZINr1x","insta":"sem no momento"}
-        // in production code, item.htmlTitle should have the HTML entities escaped.
-        document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
-      }
-    }
-    </script>
-    <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyCcDWfGexWwNfup3ux_LGxPkw1ZDQ8nnGw&cx=017576662512468239146:omuauf_lfve&q=cars&callback=hndlr">
-    </script>
-  </body>
-</html>
+<?php
+ class Comunicacao {
+ public function enviaConteudoParaAPI($cabecalho = array(), $conteudoAEnviar, $url, $tpRequisicao) {
+ try{
+ //Inicializa cURL para uma URL.
+ $ch = curl_init($url);
+ //Marca que vai enviar por POST(1=SIM), caso tpRequisicao seja igual a "POST"
+ if ($tpRequisicao == 'POST') {
+ curl_setopt($ch, CURLOPT_POST, 1);
+ //Passa o conteúdo para o campo de envio por POST
+ curl_setopt($ch, CURLOPT_POSTFIELDS, $conteudoAEnviar);
+ }
+ //Se foi passado como parâmetro, adiciona o cabeçalho à requisição
+ if (!empty($cabecalho)) {
+ curl_setopt($ch, CURLOPT_HTTPHEADER, $cabecalho);
+ }
+ //Marca que vai receber string
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+ /*
+ Caso você não receba retorno da API, pode estar com problema de SSL.
+ Remova o comentário da linha abaixo para desabilitar a verificação.
+ */
+ //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+ //Inicia a conexão
+ $resposta = curl_exec($ch);
+ //Fecha a conexão
+ curl_close($ch);
+ }catch(Exception $e){
+ return $e->getMessage();
+ }
+ return $resposta;
+ }
+ }
+?>
